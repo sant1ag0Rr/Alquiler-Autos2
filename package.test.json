@@ -1,0 +1,61 @@
+{
+  "name": "rent-a-ride-tests",
+  "version": "1.0.0",
+  "description": "Configuración de pruebas unitarias para Rent-a-Ride",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test:backend": "mocha --experimental-modules backend/tests/backend.test.js",
+    "test:frontend": "mocha --experimental-modules client/src/tests/frontend.test.js",
+    "test:all": "npm run test:backend && npm run test:frontend",
+    "test:backend:watch": "mocha --experimental-modules --watch backend/tests/backend.test.js",
+    "test:frontend:watch": "mocha --experimental-modules --watch client/src/tests/frontend.test.js",
+    "test:coverage": "nyc npm run test:all"
+  },
+  "keywords": [
+    "testing",
+    "unit-tests",
+    "mocha",
+    "chai",
+    "sinon",
+    "rent-a-ride"
+  ],
+  "author": "Equipo Rent-a-Ride",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^10.2.0",
+    "chai": "^4.3.7",
+    "sinon": "^17.0.1",
+    "nyc": "^15.1.0",
+    "@babel/register": "^7.23.0",
+    "@babel/preset-env": "^7.23.0",
+    "jsdom": "^23.0.1",
+    "jsdom-global": "^3.0.2"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.2.0"
+  },
+  "nyc": {
+    "extends": "@nyc/babel-config",
+    "reporter": [
+      "text",
+      "html",
+      "lcov"
+    ],
+    "exclude": [
+      "**/*.test.js",
+      "**/*.spec.js",
+      "node_modules/**"
+    ]
+  },
+  "mocha": {
+    "require": [
+      "@babel/register",
+      "jsdom-global/register"
+    ],
+    "timeout": 10000,
+    "reporter": "spec"
+  }
+}
