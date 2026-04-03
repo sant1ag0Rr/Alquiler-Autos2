@@ -18,6 +18,11 @@ export const navLinks = [
       id:'3',
       title: "Contacto",
       path:'/contact'
+    },
+    {
+      id:'4',
+      title: "Asistente IA",
+      path:'/ai'
     }
   ];
   

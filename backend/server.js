@@ -7,6 +7,7 @@ import userRoute from "./routes/userRoute.js";
 import authRoute from "./routes/authRoute.js";
 import adminRoute from './routes/adminRoute.js'
 import vendorRoute from './routes/venderRoute.js'
+import aiRoute from './routes/ai.routes.js'
 import cors from 'cors'
 import cookieParser from "cookie-parser";
 import { cloudinaryConfig } from "./utils/cloudinaryConfig.js";
@@ -51,6 +52,7 @@ App.use("/api/user", userRoute);
 App.use("/api/auth", authRoute);
 App.use("/api/admin", adminRoute);
 App.use("/api/vendor", vendorRoute);
+App.use("/api/ai", aiRoute);
 
 // Middleware de manejo de errores
 App.use((err, req, res, next) => {

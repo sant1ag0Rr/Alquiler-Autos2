@@ -28,6 +28,7 @@ import AllVehiclesofSameModel from "./pages/user/AllVehiclesofSameModel";
 import AddProductModal from "./pages/admin/components/AddProductModal";
 import VendorAddProductModal from "./pages/vendor/Components/VendorAddVehilceModal";
 import CarNotFound from "./pages/user/CarNotFound";
+import AiAssistant from "./pages/user/AiAssistant";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
           <Route path="/vehicles" element={<Vehicles />} />
           <Route path="/enterprise" element={<Enterprise />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/ai" element={<AiAssistant />} />
         </Route>
         
         {/* components without Navbar */}
